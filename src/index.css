@@ -1,0 +1,118 @@
+@import "tailwindcss";
+
+:root {
+  --bg-coastal-mist: #E9F1F6;
+  --color-harbor-blue: #134C65;
+  --color-midnight-tide: #152740;
+  --color-seafoam-steel: #487F86;
+  --color-driftwood-beige: #F0ECDA;
+  --color-ocean-blue: #D8F0F5;
+  --color-champagne-gold: #B69A5A;
+  --price-font-family: 'Cinzel', 'Playfair Display', serif;
+}
+
+body {
+  background-color: #E9F1F6;
+  color: #152740;
+  font-family: 'Prompt', 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+/* Luxury Numerical Font for all Prices */
+.font-price {
+  font-family: var(--price-font-family);
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum" 1, "onum" 0;
+  letter-spacing: -0.01em;
+}
+
+.font-serif-luxury {
+  font-family: 'Cinzel', 'Playfair Display', Georgia, serif;
+}
+
+/* Subtle ocean wave and bobbing animations */
+@keyframes yachtBobbing {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-5px) rotate(1.2deg);
+  }
+}
+
+@keyframes fishSwim {
+  0% {
+    transform: translateY(0px) scaleY(1);
+  }
+  50% {
+    transform: translateY(-6px) scaleY(0.96);
+  }
+  100% {
+    transform: translateY(0px) scaleY(1);
+  }
+}
+
+@keyframes fishTail {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(14deg);
+  }
+  75% {
+    transform: rotate(-14deg);
+  }
+}
+
+@keyframes floatGentle {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes bubbleRise {
+  0% {
+    transform: translateY(0) scale(0.6);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(-80px) scale(1.2);
+    opacity: 0;
+  }
+}
+
+.animate-yacht-bob {
+  animation: yachtBobbing 3.8s ease-in-out infinite;
+}
+
+.animate-fish-swim {
+  animation: fishSwim 2.4s ease-in-out infinite;
+}
+
+.animate-fish-tail {
+  transform-origin: left center;
+  animation: fishTail 0.8s ease-in-out infinite;
+}
+
+.animate-float-gentle {
+  animation: floatGentle 4.5s ease-in-out infinite;
+}
+
+/* Custom scrollbar matching nautical theme */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #E9F1F6;
+}
+::-webkit-scrollbar-thumb {
+  background: #B6CBD8;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #8FAEC2;
+}
